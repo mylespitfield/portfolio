@@ -373,9 +373,16 @@ html.page-transitioning #page-transition {
     transform: translateX(3px);
 }
 
-.code-line input:focus-visible, .code-line textarea:focus-visible, .code-line button:focus-visible {
-    outline: 2px solid #7c7cff;
-    outline-offset: 4px;
+.code-line input:-webkit-autofill,
+.code-line input:-webkit-autofill:hover,
+.code-line input:-webkit-autofill:focus,
+.code-line input:-webkit-autofill:active {
+    -webkit-text-fill-color: #D4D4D4;
+    caret-color: #D4D4D4;
+    -webkit-box-shadow: 0 0 0 1000px #222a30 inset;
+    box-shadow: 0 0 0 1000px #222a30 inset;
+    transition: background-color 9999s ease-in-out 0s;
+    color: white;
 }
 
 #contactFormResult .success {
