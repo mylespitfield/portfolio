@@ -1,17 +1,17 @@
 <footer class="w-full">
     {% set footerItems = [
         { label: '© ' ~ now|date('Y') ~ ' MYLES PITFIELD' },
-        { label: 'LINKEDIN ↗', url: 'https://www.linkedin.com/in/myles-pitfield/', target: '_blank' }
+        { label: 'LINKEDIN <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>', url: 'https://www.linkedin.com/in/myles-pitfield/', target: '_blank' }
     ] %}
     <div class="flex items-center flex-col sm:flex-row sm:text-left text-center justify-self-center font-semibold [&_a]:relative [&_a]:py-2.5 [&_a]:px-[30px] [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-white [&_a]:tracking-widest">
         {% for item in footerItems %}
             {% if item.url is defined %}
                 <a href="{{ item.url }}" target="{{ item.target ?? '' }}" rel="{{ item.target == '_blank' ? 'noopener noreferrer' : '' }}" class="text-gray-600 text-sm">
-                    {{ item.label }}
+                    {{ item.label | raw }}
                 </a>
             {% else %}
                 <span class="text-gray-600 text-sm py-2.5 px-[30px] tracking-widest">
-                    {{ item.label }}
+                    {{ item.label  | raw }}
                 </span>
             {% endif %}
             {% if not loop.last %}
