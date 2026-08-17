@@ -7,3 +7,5 @@
 /web/cpresources/*
 .DS_Store
 /config/license.key
+*.sql
+*.sql.gz
