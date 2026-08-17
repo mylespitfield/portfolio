@@ -1,0 +1,110 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}About Me | Myles Pitfield{% endblock %}
+{% block metaDescription %}Learn more about Myles Pitfield, a Nottingham-based web developer with commercial and freelance experience in frontend development, ecommerce and web applications.{% endblock %}
+
+{% block content %}
+
+    {% set about = craft.entries.section('about').one() %}
+
+    {% set heading = 'ABOUT ME' %}
+    <h1 class="relative text-white text-[clamp(35px,5vw,100px)] font-bold text-center mb-5">
+        <span class="sr-only">{{ heading }}</span>
+        <span class="typewriter-random inset-0" data-word="{{ heading }}" aria-hidden="true"></span>
+    </h1>
+    <p class="text-gray-400 text-sm font-bold text-center mb-5">Web Developer / Nottingham, United Kingdom</p>
+
+    <div class="min-h-[100px]"></div>
+
+    <section>
+        <div class="flex flex-col gap-[50px] lg:flex-row">
+            <div class="flex-1 text-white">
+                <img class="rounded-xl rotate-[-2deg]" src="{{ about.featuredImage.one().url }}" alt="{{ about.featuredImage.one().caption }}">
+            </div>
+            <div class="flex-1 text-white leading-loose">
+                {{ about.introduction }}
+            </div>
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">MY EXPERIENCE</span>
+            <span class="typewriter-random" data-word="MY EXPERIENCE" aria-hidden="true"></span>
+        </h2>
+        <div class="relative flex flex-col gap-[50px] py-3">
+            <div aria-hidden="true" class="absolute w-[5px] h-full bg-white rounded-[100px] left-[7px] top-0 z-10"></div>
+            {% for item in about.timeline.all() %}
+                <div class="text-white flex gap-5 items-center">
+                    <div aria-hidden="true" class="w-[20px] h-[20px] min-w-[20px] min-h-[20px] bg-[#7c7cff] rounded-[100px] z-20"></div>
+                    <div>
+                        <p class="font-bold text-[clamp(14px,calc(12.25px+0.47vw),19px)] text-gray-400">{{ item.year }}</p>
+                        <p class="text-[clamp(20px,calc(18.25px+0.47vw),25px)] font-bold">{{ item.title }}</p>
+                        <p class="text-[clamp(17px,calc(15.25px+0.47vw),22px)] text-gray-400">{{ item.role }}</p>
+                        <p class="text-[clamp(15px,calc(14.3px+0.19vw),17px)]">{{ item.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">HOW I WORK</span>
+            <span class="typewriter-random" data-word="HOW I WORK" aria-hidden="true"></span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-15 md:gap-10">
+            {% for item in craft.entries.section('howIWork').all() %}
+                <div>
+                    <div class="font-bold tracking-widest text-xl text-[#7090af]">0{{ loop.index }} / {{ item.title }}</div>
+                    <div class="pt-3 mt-3 border-t border-white/10 text-white">{{item.description}}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">TECHNOLOGIES</span>
+            <span class="typewriter-random" data-word="TECHNOLOGIES" aria-hidden="true"></span>
+        </h2>
+        {% set technologiesData = [
+            {title: 'FRONT END', data: about.frontEnd.all()},
+            {title: 'DEVELOPMENT', data: about.development.all()},
+            {title: 'DATA & TOOLS', data: about.dataTools.all()}
+        ] %}
+        <div class="flex flex-col gap-15">
+            {% for category in technologiesData %}
+                <div class="flex flex-col gap-3">
+                    <h3 class="text-white text-[clamp(20px,calc(18.25px+0.47vw),25px)] font-bold tracking-widest">{{ category.title }}</h3>
+                    <div class="flex flex-row flex-wrap gap-5">
+                        {% for item in category.data %}
+                            <div class="text-white bg-white/[0.1] border border-white/10 px-4 py-2 sm:px-10 sm:py-5 rounded-xl transition duration-300 hover:bg-white/[0.2]">{{ item.title }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="text-white text-[clamp(35px,5vw,100px)] font-bold">WANT TO KNOW MORE?<span class="typewriter-cycle" data-words="" aria-hidden="true"></span></h2>
+        <div class="min-h-[50px]"></div>
+        <p class="text-white text-[clamp(25px,3vw,60px)] font-bold">See what I've been working on.</p>
+        <p class="text-gray-400 text-[clamp(18px,2vw,40px)] font-bold">Take a look at some of the projects I've designed, developed and helped bring to life.</p>
+        <div class="min-h-[50px] min-[767px]:min-h-[10px]"></div>
+        <a href="/projects" class="group inline-flex items-center gap-3 text-[clamp(18px,1vw,20px)] tracking-wide text-white font-semibold hover:text-[#7c7cff] transition">
+            VIEW MY WORK
+            <i class="fa-solid fa-arrow-up-right-from-square transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"></i>
+        </a>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<header class="w-full sticky top-0 z-50 bg-[var(--dark)]">
+    <div class="flex items-center text-white px-[2.5%] md:px-[5%] lg:px-[10%] py-10 min-[900px]:grid min-[900px]:grid-cols-3 max-[650px]:flex-col max-[650px]:gap-5 header-inner">
+        <a href="/" aria-label="Myles Pitfield - Home" class="logo min-[650px]:py-[30px] shrink-0 min-[900px]:justify-self-start max-[650px]:self-center">
+            <span aria-hidden="true" class="logo-bracket">&lt;</span>
+            <span aria-hidden="true" class="logo-text">MP</span>
+            <span aria-hidden="true" class="logo-bracket">&gt;</span>
+        </a>
+
+        {% set navItems = [
+            { label: 'PROJECTS', url: '/projects', segment: 'projects' },
+            { label: 'ABOUT', url: '/about', segment: 'about' },
+            { label: 'CONTACT', url: '/contact', segment: 'contact' }
+        ] %}
+
+        <nav class="flex items-center ml-auto min-[900px]:ml-0 min-[900px]:justify-self-center max-[650px]:mx-auto max-[650px]:w-full max-[650px]:justify-center [&_a]:relative [&_a]:py-2.5 [&_a]:px-[30px] max-[650px]:[&_a]:px-3 max-[400px]:[&_a]:px-2 max-[400px]:[&_a]:text-xs [&_a]:transition-transform [&_a]:duration-300 [&_a:hover]:-translate-y-[3px] [&_a]:tracking-widest" id="nav" aria-label="Primary navigation">
+            {% for item in navItems %}
+                <a href="{{ item.url }}" {% if craft.app.request.segment(1) == item.segment %}aria-current="page"{% endif %} class="{% if craft.app.request.segment(1) == item.segment %}active{% else %}text-gray-300{% endif %}">{{ item.label }}</a>
+
+                {% if not loop.last %}
+                    <div aria-hidden="true" class="w-[1px] h-[30px] bg-gray-500 rotate-[25deg]"></div>
+                {% endif %}
+            {% endfor %}
+        </nav>
+
+        <p class="max-[900px]:hidden justify-self-end text-gray-500 text-sm tracking-[0.2em]">2026 PORTFOLIO</p>
+    </div>
+</header>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% set canonicalUrl = url(craft.app.request.pathInfo) %}
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block metaDescription %}Web developer based in Nottingham, specialising in websites, ecommerce and web applications.{% endblock %}">
+        <meta property="og:title" content="{% block ogTitle %}Myles Pitfield | Web Developer in Nottingham{% endblock %}">
+        <meta property="og:description" content="{% block ogDescription %}Web developer based in Nottingham with 3+ years of commercial experience building websites, ecommerce platforms and web applications.{% endblock %}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ canonicalUrl }}">
+        <meta property="og:image" content="{{ siteUrl }}assets/og-image.jpg">
+        <link rel="canonical" href="{{ canonicalUrl }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{% block twitterTitle %}Myles Pitfield | Web Developer in Nottingham{% endblock %}">
+        <meta name="twitter:description" content="{% block twitterDescription %}Web developer based in Nottingham with 3+ years of commercial experience building websites, ecommerce platforms and web applications.{% endblock %}">
+        <meta name="twitter:image" content="{{ siteUrl }}assets/og-image.jpg">
+        <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
+
+        <title>{% block title %}Myles Pitfield{% endblock %}</title>
+
+        <script>
+            if (sessionStorage.getItem('pageTransition') === 'true') document.documentElement.classList.add('page-transitioning');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        </script>
+
+        <!-- FAVICON -->
+        <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" sizes="32x32">
+        <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="/css/output.css">
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+        <!-- PHOTSWIPE -->
+        <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+        <script type="module" src="/js/photoswipe.js"></script>
+
+        <!-- SCRIPT -->
+        <script src="/js/cursor.js" defer></script>
+        <script src="/js/typewriter-random.js" defer></script>
+        <script src="/js/typewriter-cycle.js" defer></script>
+        <script src="/js/header.js" defer></script>
+        <script src="/js/page-transition.js" defer></script>
+        <script src="/js/form-handler.js" defer></script>
+    </head>
+    <body class="bg-[var(--dark)] overflow-x-hidden">
+
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded-lg">Skip to main content</a>
+
+        <div class="torch"></div>
+
+        {% include '_components/header.twig' %}
+
+        <main id="main-content" class="w-[92%] md:w-[90%] lg:w-[80%] mx-auto">
+            {% block content %}{% endblock %}
+        </main>
+
+        <div class="h-[150px]"></div>
+
+        {% include '_components/footer.twig' %}
+
+        <div class="h-[55px] sm:h-[25px]"></div>
+
+        <div class="cursor-ring"></div>
+        <div class="cursor-dot"></div>
+
+        <div id="page-transition" aria-hidden="true">
+            <div class="transition-logo">
+                <span class="transition-logo-bracket">&lt;</span>
+                <span class="transition-logo-text">MP</span>
+                <span class="transition-logo-bracket">&gt;</span>
+            </div>
+        </div>
+
+        {% include '_components/site-info.twig' %}
+
+    </body>
+
+</html>

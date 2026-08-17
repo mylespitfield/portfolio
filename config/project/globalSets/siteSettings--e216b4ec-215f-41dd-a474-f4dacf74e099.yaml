@@ -1,0 +1,68 @@
+fieldLayouts:
+  f04151a5-4f20-4c53-ad02-5e1709ab06a0:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-12T18:06:30+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5ac57c94-e9be-47da-b707-bebd3699381a # image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c603500e-b64e-4cc4-9a8b-7af65ac57e4c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Branding
+        uid: 5549d9f6-81da-40a4-94b9-74dd2599ac9c
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-12T18:10:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 322e2d1b-af06-4ba7-bb8f-d4f6581b9348 # URL Link
+            handle: emailAddress
+            instructions: null
+            label: 'Email Address'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75a6e6ce-159a-4ada-8945-abbc03a4bb2d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-12T18:10:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 322e2d1b-af06-4ba7-bb8f-d4f6581b9348 # URL Link
+            handle: linkedinUrl
+            instructions: null
+            label: 'LinkedIn URL'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2e87714-7273-4f46-8706-7735de8472c4
+            userCondition: null
+            warning: null
+            width: 50
+        name: Contact
+        uid: bde07705-e9a6-483b-8ccd-938c956a3923
+        userCondition: null
+    thumbFieldKey: null
+handle: siteSettings
+name: 'Site Settings'
+sortOrder: 1

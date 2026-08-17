@@ -1,0 +1,22 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 046a6d55-a062-414d-92ad-be2bd5f85215 # How I Work
+handle: howIWork
+maxAuthors: 1
+minAuthors: 1
+name: 'How I Work'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  3dc07e65-4aa3-4322-9db5-5858b5be36a0: # Myles Pitfield | Portfolio
+    enabledByDefault: true
+    hasUrls: true
+    template: how-i-work/_entry.twig
+    uriFormat: 'how-i-work/{slug}'
+type: channel

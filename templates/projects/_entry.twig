@@ -1,0 +1,165 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}{{ entry.title }} | Projects | Myles Pitfield{% endblock %}
+{% block metaDescription %}{{ entry.description }}{% endblock %}
+{% block ogTitle %}{{ entry.title }} | Myles Pitfield{% endblock %}
+{% block ogDescription %}{{ entry.description }}{% endblock %}
+{% block twitterTitle %}{{ entry.title }} | Myles Pitfield{% endblock %}
+{% block twitterDescription %}{{ entry.description }}{% endblock %}
+
+{% block content %}
+    <section>
+        <p class="text-xl md:text-[2vw] tracking-widest text-center text-[var(--mid-blue1)]">PROJECT</p>
+        <div class="my-5 mx-auto h-[4px] w-[50px] bg-gray-400 rounded-[100px]"></div>
+        <h1 class="text-3xl md:text-[6vw] font-bold tracking-tight text-center text-white">{{ entry.title }}</h1>
+    </section>
+    <div class="min-h-[200px]"></div>
+    <section class="max-w-6xl mx-auto">
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">PROJECT OVERVIEW</span>
+            <span class="typewriter-random" data-word="PROJECT OVERVIEW" aria-hidden="true"></span>
+        </h2>
+        <div class="my-5 h-[4px] w-[50px] bg-gray-400 rounded-[100px]"></div>
+        <div class="text-white leading-7 [&_a]:text-[#9ecfff] [&_a]:underline [&_a]:transition [&_a:hover]:text-white [&_h2]:text-lg [&_h2]:font-bold [&_h2]:mt-10 [&_h2:first-child]:mt-0 [&_h2]:mb-2 [&_p]:mb-6">{{ entry.projectOverview }}</div>
+    </section>
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+    <section>
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">PROJECT DETAILS</span>
+            <span class="typewriter-random" data-word="PROJECT DETAILS" aria-hidden="true"></span>
+        </h2>
+        <div class="my-5 h-[4px] w-[50px] bg-gray-400 rounded-[100px]"></div>
+        <div class="flex flex-wrap flex-col lg:flex-row gap-[50px] justify-between">
+            <div class="grid grid-cols-2 gap-6 text-white max-w-[700px] w-full lg:flex-1">
+                <div class="col-span-2 sm:col-span-1">
+                    <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">ROLE</span> ]</span>
+                    <p class="text-gray-400">{{ entry.projectRole }}</p>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">TYPE</span> ]</span>
+                    <p class="text-gray-400">{{ entry.projectType }}</p>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">YEAR</span> ]</span>
+                    <p class="text-gray-400">{{ entry.projectYear }}</p>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">STATUS</span> ]</span>
+                    <p class="text-gray-400">{{ entry.projectStatus }}</p>
+                </div>
+                <div class="col-span-2">
+                    <span class="text-lg font-bold">TECHNOLOGIES</span>
+                    <span class="flex flex-wrap gap-1 mt-[5px]">
+                        {% for technology in entry.technologies.all() %}
+                            <span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full">
+                                {{ technology.title }}
+                            </span>
+                        {% endfor %}
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-[700px] w-full lg:flex-1">
+                {% set featuredImage = entry.featuredImage.one() %}
+                <div class="aspect-video overflow-hidden py-3 px-5 rounded-xl shadow-[0_0_25px_rgba(255,255,255,0.3)]" style="background-color: {{ entry.bannerColor ?: '#ffffff' }}">
+                    {% if featuredImage %}
+                        <img class="transition duration-300 group-hover:scale-105 w-full h-full object-contain" src="{{ featuredImage.url }}" alt="{{ featuredImage.caption }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+    <section class="max-w-6xl mx-auto">
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">DESIGN & DEVELOPMENT</span>
+            <span class="typewriter-random" data-word="DESIGN & DEVELOPMENT" aria-hidden="true"></span>
+        </h2>
+        <div class="my-5 h-[4px] w-[50px] bg-gray-400 rounded-[100px]"></div>
+        <div class="text-white leading-7 [&_a]:text-[#9ecfff] [&_a]:underline [&_a]:transition [&_a:hover]:text-white [&_h2]:text-lg [&_h2]:font-bold [&_h2]:mt-10 [&_h2:first-child]:mt-0 [&_h2]:mb-2 [&_p]:mb-6">{{ entry.designAndDevelopment }}</div>
+    </section>
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+    {% set gallery = entry.gallery.all() %}
+    <section id="lightbox-gallery" {% if gallery|length == 0 %}class="max-w-6xl mx-auto"{% endif %}>
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">GALLERY</span>
+            <span class="typewriter-random" data-word="GALLERY" aria-hidden="true"></span>
+        </h2>
+        <div class="my-5 h-[4px] w-[50px] bg-gray-400 rounded-[100px]"></div>
+        {% if entry.galleryMessage %}
+            <div class="text-sm text-gray-400 [&_strong]:text-gray-300 [&_a]:text-[#9ecfff] [&_a]:underline [&_a]:transition [&_a:hover]:text-white">{{ entry.galleryMessage }}</div>
+            <div class="min-h-5"></div>
+        {% endif %}
+        <div class="flex flex-col gap-6">
+            {% if gallery[0] is defined %}
+                <a class="group relative h-[300px] md:h-[400px] overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[0].url }}" data-pswp-width="{{ gallery[0].width }}" data-pswp-height="{{ gallery[0].height }}">
+                    <img src="{{ gallery[0].url }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="{{ gallery[0].caption }}">
+                    <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[0].caption }}</div>
+                </a>
+            {% endif %}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {% if gallery[1] is defined %}
+                    <a class="group relative overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[1].url }}" data-pswp-width="{{ gallery[1].width }}" data-pswp-height="{{ gallery[1].height }}">
+                        <img src="{{ gallery[1].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[1].caption }}">
+                        <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[1].caption }}</div>
+                    </a>
+                {% endif %}
+                {% if gallery[2] is defined %}
+                    <a class="group relative overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[2].url }}" data-pswp-width="{{ gallery[2].width }}" data-pswp-height="{{ gallery[2].height }}">
+                        <img src="{{ gallery[2].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[2].caption }}">
+                        <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[2].caption }}</div>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+                <div class="md:col-span-2 flex flex-col gap-6 justify-around">
+                    {% if gallery[3] is defined %}
+                        <a class="group relative overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[3].url }}" data-pswp-width="{{ gallery[3].width }}" data-pswp-height="{{ gallery[3].height }}">
+                            <img src="{{ gallery[3].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[3].caption }}">
+                            <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[3].caption }}</div>
+                        </a>
+                    {% endif %}
+                    {% if gallery[4] is defined %}
+                        <a class="group relative overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[4].url }}" data-pswp-width="{{ gallery[4].width }}" data-pswp-height="{{ gallery[4].height }}">
+                            <img src="{{ gallery[4].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[4].caption }}">
+                            <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[4].caption }}</div>
+                        </a>
+                    {% endif %}
+                </div>
+                {% if gallery[5] is defined %}
+                    <a class="group relative md:col-span-2 overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[5].url }}" data-pswp-width="{{ gallery[5].width }}" data-pswp-height="{{ gallery[5].height }}">
+                        <img src="{{ gallery[5].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[5].caption }}">
+                        <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[5].caption }}</div>
+                    </a>
+                {% endif %}
+                <div class="md:col-span-2 flex flex-col gap-6 justify-around">
+                    {% if gallery[6] is defined %}
+                        <a class="group relative overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[6].url }}" data-pswp-width="{{ gallery[6].width }}" data-pswp-height="{{ gallery[6].height }}">
+                            <img src="{{ gallery[6].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[6].caption }}">
+                            <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[6].caption }}</div>
+                        </a>
+                    {% endif %}
+                    {% if gallery[7] is defined %}
+                        <a class="group relative overflow-hidden rounded-xl border border-white/15 transition-transform duration-300 hover:-translate-y-1 lightBoxImg" href="{{ gallery[7].url }}" data-pswp-width="{{ gallery[7].width }}" data-pswp-height="{{ gallery[7].height }}">
+                            <img src="{{ gallery[7].url }}" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300" alt="{{ gallery[7].caption }}">
+                            <div class="absolute transition duration-300 bottom-0 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0 left-0 w-full bg-black/50 text-white px-4 py-2 text-center">{{ gallery[7].caption }}</div>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+    <section class="max-w-6xl mx-auto">
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">OUTCOME</span>
+            <span class="typewriter-random" data-word="OUTCOME" aria-hidden="true"></span>
+        </h2>
+        <div class="my-5 h-[4px] w-[50px] bg-gray-400 rounded-[100px]"></div>
+        <div class="text-white leading-7 [&_a]:text-[#9ecfff] [&_a]:underline [&_a]:transition [&_a:hover]:text-white [&_h2]:text-lg [&_h2]:font-bold [&_h2]:mt-10 [&_h2:first-child]:mt-0 [&_h2]:mb-2 [&_p]:mb-6">{{ entry.projectOutcome }}</div>
+        {% set testimonial = entry.testimonial.one() %}
+        {% if testimonial %}
+            <div class="min-h-5"></div>
+            {% include '_components/testimonial.twig' with { testimonial: testimonial } %}
+        {% endif %}
+    </section>
+{% endblock %}

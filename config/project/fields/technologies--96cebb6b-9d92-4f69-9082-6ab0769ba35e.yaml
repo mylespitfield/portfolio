@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: technologies
+instructions: null
+name: Technologies
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSearchInput: true
+  showSiteMenu: true
+  source: 'taggroup:614572a9-fbb9-41b4-ac82-52224ba5d9bf' # Technologies
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Tags

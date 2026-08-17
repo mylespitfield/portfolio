@@ -1,0 +1,25 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 4b1e1c86-8730-4fd4-a490-70d088e84ea7 # Project
+handle: projects
+maxAuthors: 1
+minAuthors: 1
+name: Projects
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  3dc07e65-4aa3-4322-9db5-5858b5be36a0: # Myles Pitfield | Portfolio
+    enabledByDefault: true
+    hasUrls: true
+    template: projects/_entry.twig
+    uriFormat: 'projects/{slug}'
+structure:
+  maxLevels: null
+  uid: d0d30720-ac76-4c37-810d-34568a4f3d25
+type: structure

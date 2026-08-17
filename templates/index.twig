@@ -1,0 +1,125 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}Myles Pitfield | UK Web Developer{% endblock %}
+{% block metaDescription %}Web developer based in Nottingham with 3+ years of commercial experience building websites, ecommerce platforms and web applications.{% endblock %}
+
+{% block content %}
+
+    <section class="hero">
+        <h1 class="text-[24vw] md:text-[clamp(100px,18vw,200px)] lg:text-[clamp(200px,18vw,350px)] leading-[0.9] font-bold tracking-[-0.05em] text-center text-white">
+            MYLES
+            <br>
+            PITFIELD
+        </h1>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="text-white text-[clamp(35px,5vw,100px)] font-bold">
+            <span class="sr-only">I BUILD ECOMMERCE, WEB APPS AND WEBSITES</span>
+            <span aria-hidden="true">I BUILD <span class="typewriter-cycle" data-words="ECOMMERCE,WEB APPS,WEBSITES"></span></span>
+        </h2>
+        <div class="grid grid-cols-1 gap-6 text-white">
+            <div>
+                <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">ROLE</span> ]</span>
+                <p class="text-gray-400">WEB DEVELOPER</p>
+            </div>
+            <div>
+                <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">LOCATION</span> ]</span>
+                <p class="text-gray-400">NOTTINGHAM, UNITED KINGDOM</p>
+            </div>
+            <div>
+                <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">EXPERIENCE</span> ]</span>
+                <p class="text-gray-400">3+ YEARS COMMERCIAL / ~1 FREELANCE</p>
+            </div>
+            <div>
+                <span class="text-xl font-bold">[ <span class="text-[#7c7cff]">FOCUS</span> ]</span>
+                <p class="text-gray-400">WEB / ECOMMERCE / SAAS</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="relative text-[clamp(35px,5vw,100px)] text-white font-bold mb-10">
+            <span class="sr-only">SHOWCASE</span>
+            <span class="typewriter-random" data-word="SHOWCASE" aria-hidden="true"></span>
+        </h2>
+        {% set showcaseProjects = craft.entries.section('projects').homepageShowcase(true).all() %}
+        <div class="flex flex-col gap-20">
+            {% for project in showcaseProjects %}
+                <div class="group flex flex-col lg:flex-row {% if loop.index is even %}lg:flex-row-reverse{% endif %} gap-10 lg:gap-16 w-full hover:bg-white/[0.2] bg-white/[0.1] border border-white/10 px-8 md:px-12 py-10 md:py-14 rounded-xl overflow-hidden transition duration-300">
+                    <div class="text-white flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-sm tracking-[0.2em] text-[#7090af] mb-4">0{{ loop.index }} / FEATURED PROJECT</div>
+                            <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">{{ project.title }}</h3>
+                            <p class="text-gray-400 text-lg max-w-xl">{{ project.description }}</p>
+                        </div>
+                        <div class="mt-10">
+                            <a href="{{ project.url }}" class="inline-flex items-center gap-3 text-sm tracking-wide text-white font-semibold group-hover:text-[#7090af] transition">
+                                VIEW PROJECT
+                                <i class="fa-solid fa-arrow-up-right-from-square transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex items-center">
+                        <div class="rounded-xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.45)] {% if loop.index is even %}rotate-[2deg]{% else %}rotate-[-2deg]{% endif %} group-hover:rotate-0 group-hover:scale-[1.02] transition duration-500">
+                            <img src="{{ project.showcaseImage.one().url }}" alt="{{ project.showcaseImage.one().caption }}" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        {% set skills = ['HTML', 'CSS', 'JAVASCRIPT', 'CRAFT CMS', 'TWIG', 'TAILWIND CSS', 'SQL', 'POSTGRESQL', 'ASTRO', 'HANDLEBARS', 'GIT'] %}
+        <div class="relative overflow-hidden">
+            <div class="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-[var(--dark)] to-transparent z-10 pointer-events-none"></div>
+            <div class="scrolltrack flex w-max">
+                <div class="scrolltrack-group flex gap-[50px] items-center shrink-0 pr-[50px]">
+                    {% for skill in skills %}
+                        <div class="text-white text-xl sm:text-3xl font-bold whitespace-nowrap">{{ skill }}</div>
+                        <div class="min-w-[30px] min-h-[30px] max-w-[30px] max-h-[30px] bg-[#7c7cff] rounded-full" aria-hidden="true"></div>
+                    {% endfor %}
+                </div>
+                <div class="scrolltrack-group flex gap-[50px] items-center shrink-0 pr-[50px]" aria-hidden="true">
+                    {% for skill in skills %}
+                        <div class="text-white text-xl sm:text-3xl font-bold whitespace-nowrap">{{ skill }}</div>
+                        <div class="min-w-[30px] min-h-[30px] max-w-[30px] max-h-[30px] bg-[#7c7cff] rounded-full"></div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="absolute right-0 top-0 bottom-0 w-[100px] bg-gradient-to-l from-[var(--dark)] to-transparent z-10 pointer-events-none"></div>
+        </div>
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+        {% set testimonial = craft.entries.section('testimonials').featuredTestimonial(true).one() %}
+        {% if testimonial %}
+            <div class="min-h-5"></div>
+            {% include '_components/testimonial.twig' with { testimonial: testimonial } %}
+        {% endif %}
+    </section>
+
+    <div class="min-h-[100px] md:min-h-[200px]"></div>
+
+    <section>
+        <h2 class="text-white text-[clamp(35px,5vw,100px)] font-bold">WHAT ARE WE BUILDING?<span class="typewriter-cycle" data-words="" aria-hidden="true"></span></h2>
+        <div class="min-h-[50px]"></div>
+        <p class="text-white text-[clamp(25px,3vw,60px)] font-bold">Have a project, opportunity or idea?</p>
+        <p class="text-gray-400 text-[clamp(18px,2vw,40px)] font-bold">Let's talk about it.</p>
+        <div class="min-h-[50px] min-[767px]:min-h-[10px]"></div>
+        <a href="/contact" class="group inline-flex items-center gap-3 text-[clamp(18px,1vw,20px)] tracking-wide text-white font-semibold hover:text-[#7c7cff] transition">
+            GET IN TOUCH
+            <i class="fa-solid fa-arrow-up-right-from-square transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true"></i>
+        </a>
+    </section>
+
+{% endblock %}

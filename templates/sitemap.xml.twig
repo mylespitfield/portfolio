@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% header "Content-Type: application/xml" %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://pitfield.co/</loc>
+    </url>
+
+    <url>
+        <loc>https://pitfield.co/about</loc>
+    </url>
+
+    <url>
+        <loc>https://pitfield.co/projects</loc>
+    </url>
+
+    <url>
+        <loc>https://pitfield.co/contact</loc>
+    </url>
+
+    {% set projects = craft.entries().section('projects').all() %}
+
+    {% for project in projects %}
+        <url>
+            <loc>{{ project.url }}</loc>
+            <lastmod>{{ project.dateUpdated|date('c') }}</lastmod>
+        </url>
+    {% endfor %}
+</urlset>

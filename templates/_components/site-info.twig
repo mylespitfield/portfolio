@@ -1,0 +1,40 @@
+<div class="fixed bottom-0 right-0 z-50 w-[105px] h-[42px] has-[:checked]:w-[95%] sm:has-[:checked]:w-[300px] has-[:checked]:h-[300px] bg-gray-100 backdrop-blur-md border border-gray-200 rounded-tl-xl overflow-hidden shadow-[-10px_-10px_40px_rgba(0,0,0,0.2)] transition-[width,height] duration-500 ease-in-out">
+    <input type="checkbox" class="sr-only peer" id="show_site_info">
+    <label class="peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[-2px] peer-checked:hidden h-[42px] pl-5 pr-6 text-gray-600 text-xs tracking-[0.2em] flex justify-between items-center gap-4 cursor-pointer hover:text-gray-950 transition" for="show_site_info">
+        <span>INFO</span>
+        <i aria-hidden="true" class="fa-solid fa-plus"></i>
+    </label>
+    <label class="peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[-2px] hidden peer-checked:flex h-[42px] px-5 text-gray-600 text-xs tracking-[0.2em] justify-between items-center cursor-pointer hover:text-gray-950 transition" for="show_site_info">
+        <span>INFO</span>
+        <i aria-hidden="true" class="fa-solid fa-minus"></i>
+    </label>
+    <div class="invisible opacity-0 pointer-events-none peer-checked:visible peer-checked:opacity-100 peer-checked:pointer-events-auto transition-opacity duration-300 delay-200 px-5 pb-5 text-sm text-gray-600">
+        <div class="border-t border-gray-300 pt-4">
+            <p class="mb-4 leading-relaxed">This portfolio was designed and built using:</p>
+            <div class="flex flex-col gap-2 font-mono text-xs">
+                <a href="https://craftcms.com/" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center text-gray-900 hover:text-[#7c7cff] transition">
+                    <span>CRAFT CMS</span>
+                    <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://twig.symfony.com/" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center text-gray-900 hover:text-[#7c7cff] transition">
+                    <span>TWIG</span>
+                    <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center text-gray-900 hover:text-[#7c7cff] transition">
+                    <span>TAILWIND CSS</span>
+                    <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="flex justify-between items-center text-gray-900 hover:text-[#7c7cff] transition">
+                    <span>JAVASCRIPT</span>
+                    <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-y-2 mt-5 pt-4 border-t border-gray-300 font-mono text-xs">
+            <div class="text-gray-500">LAST UPDATE</div>
+            <div class="text-right text-gray-900">AUG 2026</div>
+            <div class="text-gray-500">BUILT BY</div>
+            <div class="text-right text-gray-900">MYLES PITFIELD</div>
+        </div>
+    </div>
+</div>

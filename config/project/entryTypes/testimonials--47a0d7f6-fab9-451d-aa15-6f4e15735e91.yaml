@@ -1,0 +1,156 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  c0bfb414-54d2-43c8-891a-837e42e7ce17:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-08-12T13:13:23+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e6005112-3e46-445f-8e71-47db1871a178
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-12T13:50:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 9ff94eee-953d-4b1a-9ad5-9e8c38a61ce8 # Role/Organisation
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d2e6c279-3a27-4226-b987-0622c260c983
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-12T13:50:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a53495bf-85b7-4478-aeea-b2c8089fd9d2 # Source
+            handle: source
+            instructions: null
+            label: Source
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b427e82-c8fd-4eaf-b881-22cd172decf6
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-08-12T13:50:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: cd1e747c-eb39-49fb-b32d-0e8fffd0a42f # Source URL
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 57a60fbd-022d-4580-a8f7-ac951ae32060
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-08-12T14:03:25+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ae547f79-72df-491e-acb0-9cd95e006047 # Endorser
+            handle: endorser
+            instructions: null
+            label: Endorser
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bb4e82a-6bb7-4bd4-a985-c07b84cb26ec
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-08-13T11:26:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 4c3cf2b2-4ee0-4883-bd66-139f86f75dac # Featured Testimonial
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 053eccc6-8825-44aa-a151-0b4f3a58c073
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-08-12T13:50:21+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 50081f5b-5f69-4dad-bbee-4704dc842213
+            userCondition: null
+          -
+            dateAdded: '2026-08-12T13:50:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0ef027ba-2a2c-4bdb-9c62-299c26ab90d3 # Quote
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 52f25a9e-36b3-4f9a-9ed5-1c0df602b07a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6cd7b3f1-1ebd-413c-b940-a00924e5efc9
+        userCondition: null
+    thumbFieldKey: null
+handle: testimonials
+hasTitleField: true
+icon: null
+name: Testimonials
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,0 +1,82 @@
+dateModified: 1786704580
+email:
+  fromEmail: mylespitfield10@outlook.com
+  fromName: 'Myles Pitfield | Portfolio'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  uploads:
+    hasUrls: true
+    name: Uploads
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: $ASSET_BASE_URL
+meta:
+  __names__:
+    0b3b6b99-6111-4093-b357-fab0e9e75f80: 'Timeline Item' # Timeline Item
+    0ef027ba-2a2c-4bdb-9c62-299c26ab90d3: Quote # Quote
+    02de17b5-4361-4a18-9990-17d3be29400d: 'How I Work' # How I Work
+    3dc07e65-4aa3-4322-9db5-5858b5be36a0: 'Myles Pitfield | Portfolio' # Myles Pitfield | Portfolio
+    4b1e1c86-8730-4fd4-a490-70d088e84ea7: Project # Project
+    4c3cf2b2-4ee0-4883-bd66-139f86f75dac: 'Featured Testimonial' # Featured Testimonial
+    5a562556-8bf6-4f2b-9f81-16b5eca57e18: About # About
+    5ac57c94-e9be-47da-b707-bebd3699381a: image # image
+    6cdc7cb8-151c-45ff-acea-6f767112c210: 'Credit URL' # Credit URL
+    7a37723f-4145-423e-a618-fd503b788808: 'Design and Development' # Design and Development
+    8b3ed530-2564-4270-9384-95c6ebf5f5f0: 'Timeline Item' # Timeline Item
+    9eeb035c-937f-4266-8f87-f697c4e48240: 'Project Role' # Project Role
+    9ff94eee-953d-4b1a-9ad5-9e8c38a61ce8: Role/Organisation # Role/Organisation
+    19eddab8-db2b-4981-98fe-571996a2141b: 'Myles Pitfield | Portfolio' # Myles Pitfield | Portfolio
+    26bbb5ec-c1d3-4793-98c0-b3131c8d08f3: Projects # Projects
+    046a6d55-a062-414d-92ad-be2bd5f85215: 'How I Work' # How I Work
+    47a0d7f6-fab9-451d-aa15-6f4e15735e91: Testimonials # Testimonials
+    51f07ac6-122f-4a3c-a94b-0ae672300bba: 'Project Overview' # Project Overview
+    55a26913-1abd-4976-9092-b09e485686b8: 'Public Schema' # Public Schema
+    96cebb6b-9d92-4f69-9082-6ab0769ba35e: Technologies # Technologies
+    322e2d1b-af06-4ba7-bb8f-d4f6581b9348: 'URL Link' # URL Link
+    345ed2e0-317c-4582-bef5-81e69bb4afe5: Description # Description
+    360eb36a-1584-4d41-a771-2fa22eff8e3a: Uploads # Uploads
+    7041d4b4-3533-46ea-9d04-4bb3027b7be4: Gallery # Gallery
+    20748d52-4396-4a12-955d-cd86e757b751: Caption # Caption
+    55324b91-c27d-4ce6-af5f-29b0f93611d1: 'Image Source' # Image Source
+    490105fc-df64-4bf8-bac7-5dc53ed776ee: 'Homepage Showcase' # Homepage Showcase
+    614572a9-fbb9-41b4-ac82-52224ba5d9bf: Technologies # Technologies
+    29048773-63ce-4bb9-96e9-7610ba9bdd97: Testimonials # Testimonials
+    a6532ba2-2d73-4dae-91b6-090a0a216789: 'Gallery Message' # Gallery Message
+    a53495bf-85b7-4478-aeea-b2c8089fd9d2: Source # Source
+    ae547f79-72df-491e-acb0-9cd95e006047: Endorser # Endorser
+    bd31c73e-6c30-4838-9a1b-ab470063d5d5: Testimonial # Testimonial
+    bf3fc25d-74bd-42ea-a2cc-37ba30ec9928: 'Project Year' # Project Year
+    bf9254a1-eb99-4269-8c5a-b399bbb3b2ac: Timeline # Timeline
+    bfe96e6a-2af7-4c5c-b65a-7d459bc574a6: Technologies # Technologies
+    bff84fac-485b-4b6c-9f06-40e22c63e7f5: Technologies # Technologies
+    c3baf19d-9d75-4c71-9817-08a527197922: 'HTML Editor' # HTML Editor
+    c434b807-add9-454b-9a70-d961e89e58af: 'Technology List' # Technology List
+    cd1e747c-eb39-49fb-b32d-0e8fffd0a42f: 'Source URL' # Source URL
+    db4bdcc8-08ea-4c63-ad09-d755edaeaefe: Pills # Pills
+    df31d256-7a8d-43ce-a6a2-73fcb1d4fb32: 'Featured Image' # Featured Image
+    e4b08e1a-6554-42b0-852a-de600453edcd: Type # Type
+    e8cac81a-9c78-4376-9c52-4de18115a27e: 'Project Status' # Project Status
+    e216b4ec-215f-41dd-a474-f4dacf74e099: 'Site Settings' # Site Settings
+    eadebe39-0aa0-4eda-91e7-42f4890eba02: 'Image Credit' # Image Credit
+    f16e712f-11e4-4ba3-a20e-a2380ab900d4: 'Banner Color' # Banner Color
+    f96dbb8c-5fbb-42b4-849f-891a5c7b8c94: About # About
+    f4555502-5344-43ea-8248-d55f1cb2874f: 'Project Outcome' # Project Outcome
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.6.0.0
+system:
+  edition: solo
+  live: true
+  name: 'Myles Pitfield | Portfolio'
+  schemaVersion: 5.10.0.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true

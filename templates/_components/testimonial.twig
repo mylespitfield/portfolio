@@ -1,0 +1,20 @@
+<div class="relative w-full bg-white/[0.1] rounded-xl p-6 md:p-8 overflow-hidden border border-white/10">
+    <div class="relative">
+        <div class="text-base tracking-[0.2em] text-white font-bold mb-8">TESTIMONIAL</div>
+        <blockquote class="testimonial !text-[#7090af] leading-relaxed italic text-lg">
+            {{ testimonial.quote }}
+        </blockquote>
+        <div class="mt-6">
+            <div class="text-base text-white">
+                {% if testimonial.endorser %}
+                    <span class="font-bold">{{ testimonial.endorser }},</span>
+                {% endif %}
+                {{ testimonial.roleOrganisation }}
+            </div>
+            {% if testimonial.sourceUrl %}
+                <div class="min-h-[15px]"></div>
+                <a href="{{ testimonial.sourceUrl }}" target="_blank" rel="noopener noreferrer" class="block text-right text-sm hover:text-white/[0.3] font-semibold text-white transition">View on {{ testimonial.source.label }} <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            {% endif %}
+        </div>
+    </div>
+</div>

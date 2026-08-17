@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: 'Myles Pitfield | Portfolio'
+primary: true
+siteGroup: 19eddab8-db2b-4981-98fe-571996a2141b # Myles Pitfield | Portfolio
+sortOrder: 1

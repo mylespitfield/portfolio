@@ -1,0 +1,162 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  9671acbe-0a4a-4846-8eb2-721652f9b427:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-08-13T15:26:29+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9e7de1b9-40a4-45d6-89c6-5c78d8ad3566
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-13T15:43:12+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: df31d256-7a8d-43ce-a6a2-73fcb1d4fb32 # Featured Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41f51b2a-e63d-4614-b1a7-5835b3d7078a
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-08-13T15:43:12+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf9254a1-eb99-4269-8c5a-b399bbb3b2ac # Timeline
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: acde72a9-e280-42eb-92b9-8d05422645e6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8d68a95c-4afe-4ae4-bc68-9495acb6d5b9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-13T15:43:12+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c3baf19d-9d75-4c71-9817-08a527197922 # HTML Editor
+            handle: introduction
+            instructions: null
+            label: Introduction
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d4b9f455-7e9b-44dc-8c52-ad03b9b09647
+            userCondition: null
+            warning: null
+            width: 100
+        name: Introduction
+        uid: ac28af17-91f5-481f-a812-27f90583344d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-13T15:48:39+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c434b807-add9-454b-9a70-d961e89e58af # Technology List
+            handle: frontEnd
+            instructions: null
+            label: 'FRONT END'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d9374a2-0f22-444e-bcf8-f129b407be01
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-13T16:51:12+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c434b807-add9-454b-9a70-d961e89e58af # Technology List
+            handle: development
+            instructions: null
+            label: DEVELOPMENT
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11dff3aa-3174-4f1f-ae27-7d322e5f2593
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-13T16:51:12+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c434b807-add9-454b-9a70-d961e89e58af # Technology List
+            handle: dataTools
+            instructions: null
+            label: 'DATA & TOOLS'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94d9edf0-ffc0-447d-b837-b991d2db98df
+            userCondition: null
+            warning: null
+            width: 100
+        name: Technologies
+        uid: 74edd1f0-9a90-4acb-829e-11e168c2938d
+        userCondition: null
+    thumbFieldKey: null
+handle: about
+hasTitleField: true
+icon: null
+name: About
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

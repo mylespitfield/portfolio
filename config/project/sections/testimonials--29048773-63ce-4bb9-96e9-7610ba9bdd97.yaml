@@ -1,0 +1,22 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 47a0d7f6-fab9-451d-aa15-6f4e15735e91 # Testimonials
+handle: testimonials
+maxAuthors: 1
+minAuthors: 1
+name: Testimonials
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  3dc07e65-4aa3-4322-9db5-5858b5be36a0: # Myles Pitfield | Portfolio
+    enabledByDefault: true
+    hasUrls: true
+    template: linkedin-cards/_entry.twig
+    uriFormat: 'linkedin-cards/{slug}'
+type: channel

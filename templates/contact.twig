@@ -1,0 +1,46 @@
+{% extends "_layouts/base.twig" %}
+
+{% block title %}Contact | Myles Pitfield{% endblock %}
+{% block metaDescription %}Get in touch with Myles Pitfield to discuss freelance web development, projects, opportunities or collaborations.{% endblock %}
+
+{% block content %}
+    <div class="w-full bg-white/[0.1] rounded-xl overflow-hidden border border-white/10">
+        {% set buttons = [
+            {background: '#FC5753', border: '#DF4744'},
+            {background: '#FDBC40', border: '#DE9F34'},
+            {background: '#36C84B', border: '#27AA35'}
+        ] %}
+        <div class="w-full p-3 md:p-5 flex justify-between items-center bg-white/[0.1]">
+            <div class="flex gap-2 items-center">
+                {% for button in buttons %}
+                    <div aria-hidden="true" class="w-[10px] h-[10px] rounded-full border-2" style="background-color: {{ button.background }}; border-color: {{ button.border }};"></div>
+                {% endfor %}
+                <div class="text-gray-300 ml-4 flex items-center gap-2">
+                    <h1 class="lowercase">Contact</h1>
+                    <div id="contactFormLoader" class="hidden">
+                        <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text-gray-300 ml-4 -translate-y-[3px]"><i class="fa-regular fa-window-minimize" aria-hidden="true"></i></p>
+        </div>
+        <form class="w-full p-6 md:p-8" method="POST" id="contactForm">
+            <input type="hidden" name="access_key" value="a1be671d-d39e-40d2-acdf-4d8e7392155b">
+
+            <div class="code-line form-input-line text-gray-300"><span class="prompt">&gt;</span><span>beginContact()</span></div>
+            <div class="code-line form-input-line"></div>
+            <div class="code-line form-input-line"><label for="name">// NAME</label></div>
+            <div class="code-line form-input-line"><span class="prompt">&gt;</span><input autocomplete="name" id="name" name="name" type="text" placeholder="Myles Pitfield" required></div>
+            <div class="code-line form-input-line"></div>
+            <div class="code-line form-input-line"><label for="email">// EMAIL</label></div>
+            <div class="code-line form-input-line"><span class="prompt">&gt;</span><input autocomplete="email" id="email" name="email" type="email" placeholder="you@example.com" required></div>
+            <div class="code-line form-input-line"></div>
+            <div class="code-line form-input-line"><label for="message">// MESSAGE</label></div>
+            <div class="code-line form-input-line"><span class="prompt">&gt;</span><textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea></div>
+
+            <div id="contactFormResult" role="status" aria-live="polite"></div>
+
+            <div class="code-line form-input-line mt-6"><button type="submit">[ <span class="text-gray-300">SEND_MESSAGE()</span> ]</button></div>
+        </form>
+    </div>
+{% endblock %}
