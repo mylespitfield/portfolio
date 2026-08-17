@@ -424,3 +424,11 @@ html.page-transitioning #page-transition {
         display: none;
     }
 }
+
+@media (max-width: 424px) {
+    .site-info:not(:has(input:checked)) {
+        width: 42px;
+        height: 42px;
+        border-radius: 0.75rem;
+    }
+}
