@@ -430,5 +430,7 @@ html.page-transitioning #page-transition {
         width: 42px;
         height: 42px;
         border-radius: 0.75rem;
+        right: 5px;
+        bottom: 5px;
     }
 }
