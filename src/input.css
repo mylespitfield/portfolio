@@ -424,3 +424,13 @@ html.page-transitioning #page-transition {
         display: none;
     }
 }
+
+@media (max-width: 639px) {
+    .site-info-closed {
+        width: 105px;
+        transform: rotate(-90deg);
+        transform-origin: bottom right;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
