@@ -1,12 +1,12 @@
-<div class="fixed bottom-0 right-0 z-50 w-[105px] h-[42px] has-[:checked]:w-[95%] sm:has-[:checked]:w-[300px] has-[:checked]:h-[300px] bg-gray-100 backdrop-blur-md border border-gray-200 rounded-tl-xl overflow-hidden shadow-[-10px_-10px_40px_rgba(0,0,0,0.2)] transition-[width,height] duration-500 ease-in-out">
+<div class="fixed bottom-0 right-0 z-50 min-w-[425px]:w-[105px] w-[42px] h-[42px] has-[:checked]:w-[95%] sm:has-[:checked]:w-[300px] has-[:checked]:h-[300px] bg-gray-100 backdrop-blur-md border border-gray-200 min-w-[425px]:rounded-tl-xl rounded-xl overflow-hidden shadow-[-10px_-10px_40px_rgba(0,0,0,0.2)] transition-[width,height] duration-500 ease-in-out">
     <input type="checkbox" class="sr-only peer" id="show_site_info">
     <label class="peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[-2px] peer-checked:hidden h-[42px] pl-5 pr-6 text-gray-600 text-xs tracking-[0.2em] flex justify-between items-center gap-4 cursor-pointer hover:text-gray-950 transition" for="show_site_info">
-        <span>INFO</span>
+        <span class="max-w-[425px]:hidden">INFO</span>
         <i aria-hidden="true" class="fa-solid fa-plus"></i>
     </label>
-    <label class="peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[-2px] peer-checked:hidden h-[42px] pl-5 pr-6 text-gray-600 text-xs tracking-[0.2em] flex justify-between items-center gap-4 cursor-pointer hover:text-gray-950 transition" for="show_site_info">
-        <span class="hidden sm:inline">INFO</span>
-        <i aria-hidden="true" class="fa-solid fa-plus ml-auto"></i>
+    <label class="peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[-2px] hidden peer-checked:flex h-[42px] px-5 text-gray-600 text-xs tracking-[0.2em] justify-between items-center cursor-pointer hover:text-gray-950 transition" for="show_site_info">
+        <span>INFO</span>
+        <i aria-hidden="true" class="fa-solid fa-minus"></i>
     </label>
     <div class="invisible opacity-0 pointer-events-none peer-checked:visible peer-checked:opacity-100 peer-checked:pointer-events-auto transition-opacity duration-300 delay-200 px-5 pb-5 text-sm text-gray-600">
         <div class="border-t border-gray-300 pt-4">
